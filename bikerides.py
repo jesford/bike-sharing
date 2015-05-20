@@ -267,13 +267,13 @@ def learning_selection(datatrain, alivetrain, datatest, datetime):
 
         #print true_count.shape,count.shape, len(true_count), len(count)
 
-        print 'LESS THAN ZERO?? ', len(np.where(count < 0.))
+        #print 'LESS THAN ZERO?? ', len(np.where(count < 0.))
         count[np.where(count < 0.)] = 0.
         n = len(true_count)
         summation_arg = (np.log(count+1.) - np.log(true_count+1.))**2.
         rmsle = np.sqrt(np.sum(summation_arg)/n)
 
-        print 'RMSLE', rmsle
+        print 'RMSLE', rmsle, '\n'
 
     else:
         print 'Saving Predictions in file: output.csv\n'
